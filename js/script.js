@@ -1,6 +1,6 @@
 console.log('JS OK')
 
-const list = document.querySelector('ul');
+const list = document.querySelector('.row');
 
 
 const team = [
@@ -42,13 +42,20 @@ let items = '';
 
 for (let i = 0; i < team.length; i++){
 
-    const currentName = team[i].name;
-    const currentRole = team[i].role;
+    const member = team[i];
 
-    items += '<li>';
-    items += `<h5 class="card-title mt-3">${currentName}</h5>`
-    items += `<p class="card-text">${currentRole}</p>`
-    items += '</li>';
+    items += `
+    <div class="col">
+        <div class="card">
+            <ul class="list-unstyled">
+                <li>
+                <img src="img/${member.img}" class="img-fluid" alt="${member.name}" >
+                    <h5 class="card-title mt-3">${member.name}</h5>
+                    <p class="card-text">${member.role}</p>
+                </li>
+            </ul>
+        </div>
+    </div>`
 }
 
 
